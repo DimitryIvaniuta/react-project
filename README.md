@@ -1,6 +1,6 @@
 # React Frontend for Java Spring Boot Authentication Project
 
-## 📋 Table of Contents
+## Table of Contents
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -17,10 +17,10 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-## 📖 Project Overview
+## Project Overview
 This React frontend application serves as the user interface for a Java Spring Boot authentication system. It provides a login page and a secured main page with menu options like Contacts, Reservations, Orders, Profile, and Settings.
 
-## ✨ Features
+## Features
 - User Authentication with JWT
 - Login form with error handling
 - Protected routes after authentication
@@ -28,14 +28,14 @@ This React frontend application serves as the user interface for a Java Spring B
 - Menu navigation: Contacts, Reservations, Orders, Profile, and Settings
 - Persistent login using `localStorage`
 
-## 🛠 Tech Stack
+## Tech Stack
 - **React** (19.0)
 - **TypeScript**
 - **React Router DOM** (6.11.2)
 - **Vite** (for faster builds and development)
 - **Tailwind CSS** (for styling)
 
-## 📂 Project Structure
+## Project Structure
 ```
 frontend/
 ├── public/
@@ -66,7 +66,7 @@ frontend/
 └── tsconfig.json
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18.x or later)
@@ -93,20 +93,20 @@ frontend/
 2. **Open in browser:**
    Visit [http://localhost:4200](http://localhost:4200)
 
-## ⚙️ Environment Variables
+## Environment Variables
 Create a `.env` file in the root directory with the following:
 
 ```bash
 VITE_API_URL=http://localhost:5000/api
 ```
 
-## 🔐 Authentication Flow
+## Authentication Flow
 1. User logs in via `/login` page.
 2. JWT token is returned on successful login.
 3. Token is stored in `localStorage`.
 4. Protected routes validate the token before granting access.
 
-## 📄 Available Pages
+## Available Pages
 - **Login Page:** `/login`
 - **Main Page:** `/`
     - **Contacts:** `/contacts`
@@ -115,26 +115,26 @@ VITE_API_URL=http://localhost:5000/api
     - **Profile:** `/profile`
     - **Settings:** `/settings`
 
-## 📡 API Endpoints
+## API Endpoints
 - **POST** `/api/auth/login` — Authenticate user and return JWT.
 
-## 🐛 Troubleshooting
+## Troubleshooting
 - **CORS Issues:** Ensure backend has proper CORS configuration.
 - **Invalid Hook Call:** Verify React and React DOM versions are compatible.
 - **401 Unauthorized:** Check if JWT is correctly stored and sent in headers.
 
-## 🤝 Contributing
+## Contributing
 1. Fork the project
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 This project is licensed under the MIT License.
 
 ---
 
-## 📬 Contact
+## Contact
 
 **Dzmitry Ivaniuta** — [diafter@gmail.com](mailto:diafter@gmail.com) — [GitHub](https://github.com/DimitryIvaniuta)
