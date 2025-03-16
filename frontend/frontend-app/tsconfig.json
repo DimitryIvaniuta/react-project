@@ -5,14 +5,19 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+//    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "rootDir": "src",
+    "outDir": "../dist/out-tsc"
   },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    }
+  "files": [
+    "../node_modules/@nx/react/typings/cssmodule.d.ts",
+    "../node_modules/@nx/react/typings/image.d.ts"
   ],
+
+  "exclude": ["vite.config.ts", "**/*.spec.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "extends": "../tsconfig.base.json"
 }
