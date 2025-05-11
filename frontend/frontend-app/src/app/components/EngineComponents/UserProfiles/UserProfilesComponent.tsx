@@ -60,6 +60,16 @@ type Fetcher<T> = (url: string) => Promise<T>;
  */
 type UserDictionary = Record<UserID, ReadonlyUserProfile>;
 
+const getUserDectionary
+    = (usersArray: ReadonlyUserProfile[]) => {
+    const usersArrayMap = usersArray.reduce<UserDictionary>(
+        (acc, u) => {
+            acc[u.id] = u;
+            return acc;
+        }, {});
+
+}
+
 /**
  * Component: fetches and displays user profiles
  */
@@ -110,7 +120,6 @@ const UserProfiles: React.FC = () => {
                 setResponse({ status: 'error', message: 'Network error' });
             }
         };
-
         loadProfiles();
     }, []);
 
