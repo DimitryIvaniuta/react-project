@@ -20,28 +20,37 @@
  *
  * string S contains at least two characters.
  */
-
-export const reformatString = (s:string) => {                 // Entry point: gets the raw input string s
-    const str = s.replace(/[ -]/g, '');      // Remove all spaces and dashes using a regex; keep only letters/digits
-    const out = [];                          // Will collect formatted chunks (strings) here
-    const n = str.length;                    // Total number of kept characters
-                                             // We want groups of 3, except when the remainder would be 1 → then last 4 must be 2+2
-    let i = 0;                               // Cursor/index we move through the string
-
-    const limit = (n % 3 === 1) ? n - 4 : n; // If n mod 3 == 1, leave the last 4 chars for special handling (2+2); else process all
-                                             // Example: n=10 → 10%3==1 → limit=6, we take 2 groups of 3, leaving 4
-
-    for (; i < limit; i += 3)                // Walk from i to limit in steps of 3…
-        out.push(str.slice(i, i + 3));         // …take a substring of 3 chars and push into output
-
-    if (i < n) {                             // Handle the tail (remaining 2, 3, or 4 chars)
-        const rem = n - i;                     // How many are left?
-        if (rem === 4)                         // If exactly 4 remain…
-            out.push(str.slice(i, i + 2),        // …split into two groups of 2
-                str.slice(i + 2, i + 4));
-        else
-            out.push(str.slice(i));              // Otherwise it’s 2 or 3; push as a single final group
+// Entry point: gets the raw input string s
+export const reformatString = (s: string) => {
+    // Remove all spaces and dashes using a regex; keep only letters/digits
+    const str = s.replace(/[ -]/g, '');
+    // Will collect formatted chunks (strings) here
+    const out = [];
+    // Total number of kept characters
+    const n = str.length;
+    // Groups of 3, except when the remainder would be 1 -> then last 4 must be 2+2
+    // Cursor/index - move through the string
+    let i = 0;
+    // If n mod 3 == 1, leave the last 4 chars for special handling (2+2); else process all
+    const limit = (n % 3 === 1) ? n - 4 : n;
+    // Example: n=10 -> 10%3==1 -> limit=6, we take 2 groups of 3, leaving 4
+    // Walk from i to limit in steps of 3…
+    for (; i < limit; i += 3) {
+        // take a substring of 3 chars and push into output
+        out.push(str.slice(i, i + 3));
     }
-
-    return out.join(' ') + ';';              // Join groups with single spaces and append a semicolon at the end
+    // Handle the tail (remaining 2, 3, or 4 chars)
+    if (i < n) {
+        const rem = n - i;             // How many are left?
+        if (rem === 4) {                       // If exactly 4 remain…
+            out.push(str.slice(i, i + 2),      // split into two groups of 2
+                str.slice(i + 2, i + 4));
+        } else {
+            // Otherwise it's 2 or 3; push as a single final group
+            out.push(str.slice(i));
+        }
+    }
+    // Join groups with single spaces and append a semicolon at the end
+    return out.join(' ') + ';';
 }
+

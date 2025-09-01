@@ -48,6 +48,8 @@
   },
   "scripts": {
     "type-check": "tsc --noEmit --watch",
-    "serve:frontend-app": "nx serve frontend-app"
+    "serve:frontend-app": "nx serve frontend-app",
+    "eventloop": "node scripts/eventloop-phases.mjs",
+    "eventloop:fetch": "node scripts/eventloop-phases.mjs --fetch"
   }
 }
